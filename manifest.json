@@ -1,0 +1,21 @@
+{
+  "name": "Save Web page",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Save URL of web page extension",
+  "permissions": ["tabs", "activeTab", "storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./scripts/contentScript.js"],
+      "css": ["./styles/styles.css"]
+    }
+  ],
+  "backgound": {
+    "service_worker": "./scripts/backgound.js"
+  },
+  "action": {
+    "default_title": "Save URL",
+    "default_popup": "popup.html"
+  }
+}
